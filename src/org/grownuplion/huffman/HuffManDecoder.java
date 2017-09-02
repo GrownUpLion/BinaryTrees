@@ -6,21 +6,16 @@ import org.grownuplion.nodes.Node;
 public class HuffManDecoder {
 
 	public HuffManDecoder() {
-		//Node d = new Node(1,'B',null,null);
-		//Node e = new Node(1,'C',null,null);
-		//Node c = new Node(2,'$',d,e);	
-		//Node b = new Node(3,'A',null,null);
-		//Node a = new Node(5,'$',c,b);
-		//decode("1001011", a);
+		
 	}
 
-	static void decode(String S, Node root) {
+	public static void decode(String S, Node root) {
 		int index = 0;
 		while (index < S.length()) index = decode(S, root, index);
 
 	}
 
-	static int decode(String S, Node root, int index) {
+	public static int decode(String S, Node root, int index) {
 		if (root.left != null) {
 			int numberValue = Character.getNumericValue(S.charAt(index));
 			if (numberValue == 1) return decode(S, root.right, index + 1);
